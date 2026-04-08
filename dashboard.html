@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | StudyFlare</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav-header">
+        <div class="logo" style="font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 10px;">
+            <img src="favicon.png" height="32" style="border-radius: 8px;">
+            STUDY<span style="color: var(--primary)">FLARE</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <span id="authStateBadge" class="flare-tag tag-live">Pro Member</span>
+            <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8rem;" onclick="location.href='index.html'">Logout</button>
+        </div>
+    </header>
+
+    <div class="dash-layout">
+        <aside class="dash-sidebar animate-on-load">
+            <div class="flare-card">
+                <h3 style="margin-bottom: 1rem;">Session Control</h3>
+                <button id="startStudyBtn" class="btn btn-primary" style="width: 100%; margin-bottom: 12px;">Start Study Match</button>
+                <button id="inviteFriendBtn" class="btn btn-secondary" style="width: 100%;">Invite a Friend</button>
+            </div>
+
+            <div class="flare-card">
+                <h3 style="margin-bottom: 1rem;">Post Doubt</h3>
+                <input type="text" id="doubtTopic" class="flare-input" placeholder="Topic" style="margin-bottom: 10px;">
+                <textarea id="doubtText" class="flare-input" placeholder="Describe your doubt..." style="margin-bottom: 10px; height: 100px; resize: none;"></textarea>
+                <button id="postDoubtBtn" class="btn btn-primary" style="width: 100%;">Post to Feed</button>
+            </div>
+
+            <!-- Stats Mini Card -->
+            <div class="flare-card" style="padding: 1.5rem; text-align: center;">
+                <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Your Stats</p>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">4.8 / 5.0</div>
+                <p style="font-size: 0.75rem;">Global Trust Score</p>
+            </div>
+        </aside>
+
+        <main class="dash-main animate-on-load" style="grid-column: 2; animation-delay: 0.2s;">
+            <!-- AI Copilot Panel (Featured) -->
+            <div class="flare-card" style="grid-column: span 2; border: 1px solid rgba(255, 59, 59, 0.25);">
+                <h2 style="margin-bottom: 0.5rem;">✨ AI Doubt Copilot</h2>
+                <p style="margin-bottom: 1.5rem;">Instant analysis and logic derivation for your complex doubts.</p>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="aiDoubtInput" class="flare-input" placeholder="Ask your doubt...">
+                    <button id="askAiBtn" class="btn btn-primary">Ask Copilot</button>
+                </div>
+                <!-- AI Result Area -->
+                <div id="aiResponseContainer" class="hidden animate-on-load" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                    <div id="aiResponseText" style="font-size: 0.95rem; line-height: 1.6;"></div>
+                    <button id="connectHumanBtn" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%; font-size: 0.8rem;">Not satisfied? Connect with a student</button>
+                </div>
+            </div>
+
+            <h2 style="grid-column: span 2; margin-top: 1rem;">Global Doubt Feed</h2>
+            <div id="doubtsGrid" style="grid-column: span 2; display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Dynamically injected -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="inviteModal" class="hidden flex-center" style="position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; backdrop-filter: blur(10px);">
+        <div class="flare-card animate-on-load" style="width: 100%; max-width: 450px; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Invite Friend</h2>
+            <p style="margin-bottom: 1.5rem;">Share this link to start a private session.</p>
+            <div style="background: #080808; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; color: var(--primary); font-family: monospace; border: 1px solid var(--border);">
+                studyflare.app/invite/SF-XYZ123
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button id="startPrivateBtn" class="btn btn-primary" style="flex: 1;">Start Session</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('inviteModal').classList.add('hidden')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

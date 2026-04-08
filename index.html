@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | StudyFlare</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-wrapper">
+    <div class="hero-glow"></div>
+    
+    <div class="flare-card animate-on-load" style="width: 100%; max-width: 500px; text-align: center; padding: 3.5rem 3rem;">
+        <header style="margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">STUDY<span style="color: var(--primary)">FLARE</span></h1>
+            <h2 style="font-size: 1.4rem; font-weight: 700;">Find Study Partners in One Tap</h2>
+            <p style="margin-top: 0.5rem;">AI-powered study & doubt solving platform</p>
+        </header>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <button id="googleLoginBtn" class="btn btn-primary" style="width: 100%;">
+                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" height="20">
+                Continue with Google
+            </button>
+
+            <div style="display: flex; align-items: center; gap: 15px; margin: 0.5rem 0;">
+                <hr style="flex-grow: 1; border: none; border-top: 1px solid var(--border);">
+                <span style="font-size: 0.8rem; color: var(--text-sub); font-weight: 600;">OR</span>
+                <hr style="flex-grow: 1; border: none; border-top: 1px solid var(--border);">
+            </div>
+
+            <button id="guestLoginBtn" class="btn btn-secondary" style="width: 100%;">
+                Continue as Guest
+            </button>
+        </div>
+
+        <footer style="margin-top: 3.5rem; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-sub);">
+            <div style="width: 8px; height: 8px; background: #00FF85; border-radius: 50%; box-shadow: 0 0 10px #00FF85;"></div>
+            12,042 students studying live
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

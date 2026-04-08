@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #0D0D0D;
+    --card: #161616;
+    --primary: #FF3B3B;
+    --primary-glow: rgba(255, 59, 59, 0.4);
+    --text-main: #FFFFFF;
+    --text-sub: #A0A0A0;
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 10px 40px rgba(0,0,0,0.5);
+    
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+}
+
+/* --- Base System --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+body { background: var(--bg); color: var(--text-main); overflow-x: hidden; min-height: 100vh; line-height: 1.5; }
+
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.03em; }
+p { color: var(--text-sub); }
+
+/* --- Layout Utils --- */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.hidden { display: none !important; }
+
+/* --- Components --- */
+
+/* Standard Card */
+.flare-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
+}
+.flare-card:hover { transform: translateY(-5px); border-color: rgba(255, 59, 59, 0.2); }
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s var(--spring-easing, ease-out);
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+
+.btn-primary { 
+    background: var(--primary); color: white; 
+    box-shadow: 0 8px 25px var(--primary-glow);
+}
+.btn-primary:hover { 
+    transform: scale(1.03) translateY(-2px); 
+    box-shadow: 0 12px 35px var(--primary-glow); 
+}
+
+.btn-secondary { 
+    background: transparent; color: white; 
+    border: 1px solid var(--border); 
+}
+.btn-secondary:hover { background: var(--border); border-color: white; }
+
+/* Inputs */
+.flare-input {
+    background: #080808;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 20px;
+    color: white;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: 0.3s;
+}
+.flare-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
+
+/* --- Chat UI --- */
+.message { margin-bottom: 20px; padding: 12px 20px; border-radius: 16px; font-size: 0.9rem; max-width: 80%; }
+.msg-user { align-self: flex-end; background: var(--primary); color: white; border-bottom-right-radius: 4px; border-top-right-radius: 16px; }
+.msg-others { align-self: flex-start; background: #252525; color: white; border-bottom-left-radius: 4px; border-top-left-radius: 16px; }
+
+/* --- Animations --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-on-load { animation: fadeIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; }
+
+/* --- Auth/Landing --- */
+.auth-wrapper { height: 100vh; display: flex; align-items: center; justify-content: center; }
+.hero-glow { position: fixed; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 59, 59, 0.1) 0%, transparent 70%); z-index: -1; }
+
+/* --- Dash Grid --- */
+.dash-layout { display: grid; grid-template-columns: 320px 1fr; gap: var(--space-lg); padding: var(--space-lg) 5%; }
+.dash-sidebar { display: flex; flex-direction: column; gap: var(--space-md); }
+.dash-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); align-content: start; }
+
+/* --- Header --- */
+.nav-header { padding: 1.5rem 5%; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: rgba(13,13,13,0.8); backdrop-filter: blur(10px); }
+
+/* --- Status Badges --- */
+.flare-tag { padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+.tag-live { background: #00FF8522; color: #00FF85; }
+
+.spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
