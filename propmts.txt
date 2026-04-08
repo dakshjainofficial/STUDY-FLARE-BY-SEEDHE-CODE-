@@ -1,0 +1,32 @@
+Prompts
+•	Product Design,Define overall system vision,"How can we design a real-time study platform where students can instantly find study partners, solve doubts, and collaborate efficiently with minimal friction?"
+
+•	User Experience,Optimize flow,"What is the most intuitive user journey that allows a student to go from login to joining a live study session in the fewest possible steps?"
+
+•	Matching System,Simulate real-time interaction,"How can we simulate a fast and believable real-time matching system (like one-tap pairing) without relying on heavy backend infrastructure?"
+
+•	AI Integration,Enhance learning,"How can we design an AI assistant that provides instant doubt resolution while still allowing escalation to human collaboration when needed?"
+
+•	AI + Human Model,Create hybrid system,"What is the best way to combine AI-generated answers with real student interaction to maximize both speed and depth of learning?"
+
+•	Chat System,Enable communication,"How can we implement a lightweight but interactive chat system that feels real-time and responsive within a frontend-driven architecture?"
+
+•	Invite System,Enable collaboration,"How can users seamlessly invite friends into private study sessions while keeping the experience simple and intuitive?"
+
+•	Access Control,Ensure proper usage,"What is an efficient way to implement role-based access (guest vs authenticated users) to balance accessibility with feature control?"
+
+•	UI Design,Ensure consistency,"How can we create a unified dark-themed UI system with strong visual hierarchy, consistent spacing, and minimal cognitive load?"
+
+•	Interaction Design,Improve responsiveness,"What micro-interactions and animations can be added to make the interface feel responsive, smooth, and engaging?"
+
+•	State Management,Maintain app state,"How can we manage user state (like login status and session flow) efficiently using lightweight storage such as localStorage?"
+
+•	Simulation Logic,Improve realism,"How can we design simulated delays and responses (matching, AI replies, chat) to make the experience feel dynamic and real?"
+
+•	Error Handling,Improve robustness,"What are the best practices to ensure buttons, navigation, and scripts do not fail due to missing event listeners or incorrect loading?"
+
+•	Project Structure,Prepare for deployment,"How should a frontend project be structured to remain clean, maintainable, and easy to deploy without unnecessary files?"
+
+•	Optimization,Improve performance,"How can we remove redundant files and optimize the project while ensuring no functionality or UI is affected?"
+
+•	Scalability,Future readiness,"How can this system be extended in the future to support real-time backend services like WebSockets and live collaboration tools?"
